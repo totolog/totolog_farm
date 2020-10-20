@@ -1,0 +1,29 @@
+<header>
+        <div class="header_container">
+            <div class="header_area side">
+                <div class="logo_block">
+                    <%= link_to image_tag("logo.png"), root_path %>
+                    <h2>ととろぐ農園</h2>
+                </div>
+                <div class="search_block">
+                    <form method="get" action="#" class="search_container">
+                        <input type="text" class="search_field" placeholder="キーワード検索" autocomplete="off">
+                        <input type="submit" class="search_btn" value="&#xf002">
+                    </form>
+                </div>
+                <div class="header_menu_block">
+                    <ul>
+                        <li class="login">
+                            <%= link_to "ログイン", "#" %>
+                        </li>
+                        <li class="resister">
+                            <%= link_to "登録", signup_path %>
+                        </li>
+                        <li class="resister">
+                            <%= link_to "登録", "#" %>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
