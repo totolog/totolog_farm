@@ -1,0 +1,12 @@
+<% if @user.errors.any? %>
+    <div class="errors_container">
+        <div calss="alert alert-danger">
+            <%= pluralize(@user.errors.count, "つのエラー") %>があります。
+        </div>
+        <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

@@ -3,20 +3,29 @@
         <div class="signIn_container">
             <div class="signIn_area side2">
                 <div class="signIn_title"><h3>新規登録</h3></div>
+                <%= render "shared/error_messages" %>
                 <div class="enter_container">
-                    <form class="new_user" action="" method="post">
-                        <label for="" class="label_field">氏名</label>
-                        <input type="text" class="form_area">
-                        <label for="" class="label_field">Email</label>
-                        <input type="text" class="form_area">
-                        <label for="" class="label_field">電話番号</label>
-                        <input type="text" class="form_area">
-                        <label for="" class="label_field">パスワード</label>
-                        <input type="text" class="form_area">
-                        <label for="" class="label_field">パスワード確認</label>
-                        <input type="text" class="form_area">
-                        <input type="submit" value="登 録" class="signin_btn">
-                    </form>
+                <%= form_for @user, html: {class: "new_user"} do |f| %>
+                    <%= f.label :name, "氏名", class: "label_field" %>
+                    <%= f.text_field :name, class: "form_area" %>
+
+                    <%= f.label :email, "Email", class: "label_field" %>
+                    <%= f.email_field :email, class: "form_area" %>
+
+                    <%= f.label :tel, "電話番号", class: "label_field" %>
+                    <%= f.text_field :tel, class: "form_area" %>
+
+                    <%= f.label :password, "パスワード", class: "label_field" %>
+                    <%= f.password_field :password, class: "form_area" %>
+
+                    <%= f.label :password_confirmation, "パスワード確認", class: "label_field" %>
+                    <%= f.password_field :password_confirmation, class: "form_area" %>
+
+                    <%= f.label :image, "アイコン", class: "label_field" %>
+                    <%= f.file_field :image %>
+
+                    <%= f.submit "登録", class: "signin_btn" %>
+                <% end %>
                 </div>
             </div>
         </div>

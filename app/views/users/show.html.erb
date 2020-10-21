@@ -1,0 +1,25 @@
+    <section class="user_info">
+        <div class="user_container">
+            <div class="user_area side">
+                <div class="info_container">
+                    <div class="user_block">
+                        <div class="user_image">
+                        <% if @user.image? %>
+                            <%= image_tag "#{@user.image}" %>
+                        <% else %>
+                            <%= image_tag ("profile_picture.jpg") %>
+                        <% end %>
+                        </div>
+                        <div class="user_personal">
+                            <div class="personals">
+                                <p class="name"><%= @user.name %></p>
+                                <p class="email"><%= @user.email %></p>
+                                <p class="tel"><%= @user.tel %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result_block"></div>
+                </div>
+            </div>
+        </div>
+    </section>

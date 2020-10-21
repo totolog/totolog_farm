@@ -1,7 +1,24 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.errors_container {
+    background-color: rgb(255, 175, 188);
+    color: red;
+    margin: 30px 0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    .alert-danger {
+        color: red;
+    }
+    .alert {
+        
+    }
+    ul {
+        li {
 
+        }
+    }
+}
 .signIn {
     .signIn_container {
         margin-top: 3rem;
@@ -43,6 +60,47 @@
                         padding: 5px 10px;
                         cursor: pointer;
                     }
+                }
+            }
+        }
+    }
+}
+
+.user_info {
+    .user_container {
+        margin-top: 5rem;
+        .user_area {
+            .info_container {
+                display: flex;
+                justify-content: space-between;
+                .user_block {
+                    width: 28%;
+                    padding: 10px 20px;
+                    .user_image {
+                        img {
+                            height: 300px;
+                            width: auto;
+                            max-width: fit-content;
+                        }
+                    }
+                    .user_personal {
+                        margin-top: 30px;
+                        .personals {
+                            
+                            .name {
+
+                            }
+                            .email {
+
+                            }
+                            .tel {
+
+                            }
+                        }
+                    }
+                }
+                .result_block {
+                    width: 70%;
                 }
             }
         }
