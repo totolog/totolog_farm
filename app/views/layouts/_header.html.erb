@@ -13,8 +13,19 @@
                 </div>
                 <div class="header_menu_block">
                     <ul>
+                    <% if logged_in? %>
                         <li class="login">
-                            <%= link_to "ログイン", "#" %>
+                            <%= link_to "ログアウト", logout_path, method: :delete %>
+                        </li>
+                        <li class="resister">
+                            <%= link_to "購入履歴", "#" %>
+                        </li>
+                        <li class="resister">
+                            <%= link_to "カート", "#" %>
+                        </li>
+                    <% else %>
+                        <li class="login">
+                            <%= link_to "ログイン", login_path %>
                         </li>
                         <li class="resister">
                             <%= link_to "登録", signup_path %>
@@ -22,6 +33,7 @@
                         <li class="resister">
                             <%= link_to "登録", "#" %>
                         </li>
+                    <% end %>
                     </ul>
                 </div>
             </div>
