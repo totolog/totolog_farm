@@ -11,6 +11,11 @@
                         <%= f.label :password, "パスワード", class: "label_field" %>
                         <%= f.password_field :password, class: "form_area"%>
 
+                        <%= f.label :remember_me, class: "label_field" do %>
+                            <%= f.check_box :remember_me %>
+                            <span>次回から入力しない</span>
+                        <% end %>
+
                         <%= f.submit "ログイン", class: "signin_btn" %>
                     <% end %>
                 </div>
