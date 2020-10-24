@@ -18,7 +18,7 @@ li {
 
 .side {
     width: 80%;
-    min-width: 1500px;
+    min-width: 1100px;
     margin: 0 auto;
 }
 .side2 {
@@ -48,7 +48,7 @@ header {
                 }
                 h2 {
                     display: inline-block;
-                    margin: 0 0 0 20px;
+                    margin: 0;
                 }
             }
             .search_block {
@@ -57,6 +57,7 @@ header {
                     position: relative;
                     width: 90%;
                     height: 35px;
+                    margin: 0 auto;
                     .search_field {
                         background-color: #f2f2f2;
                         box-sizing: border-box;
@@ -93,7 +94,7 @@ header {
                     li {
                         height: 100px;
                         width: calc(100%/3);
-                        background-size: 25%;
+                        background-size: 45%;
                         border-right: 2px solid #eee;
                         background-repeat: no-repeat;
                         background-position: center 25%;

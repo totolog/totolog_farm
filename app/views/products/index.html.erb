@@ -1,0 +1,43 @@
+    <section class="main">
+        <div class="side main_container">
+            <div class="search_area">
+                <%= render "static_pages/item"%>
+                <%= render "static_pages/feature"%>
+            </div>
+            <div class="main_area">
+                <div class="main_collection">
+                    <div class="products_collection">
+                        <div class="products_search">すべて の検索結果</div>
+                        <div class="products_contents">
+                            <div class="products_content">
+                                <% @products.each do |product| %>
+                                <div class="product">
+                                    <%= link_to product_path(product) do %>
+                                        <div class="product_image">
+                                            <% product_images = product.images %>
+                                            <% product_images.each do |product_image| %>
+                                                <%= image_tag "#{product_image.img1}" %>
+                                            <% end%>
+                                        </div>
+                                        <div class="product_name"><h3><%= product.name %></h3></div>
+                                        <div class="product_tag">
+                                            <% product_tags = product.tags %>
+                                            <% product_tags.each do |product_tag| %>
+                                                <div class="tag_area">
+                                                    <span><i class="fas fa-tag tag"></i>
+                                                        <%= "#{product_tag.name}" %>
+                                                    </span>
+                                                </div>
+                                            <% end %>
+                                        </div>
+                                        <div class="product_price">¥<%= product.price %></div>
+                                    <% end%>
+                                </div>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,63 @@
+<% provide(:title, "商品登録") %>
+    <section class="resister">
+        <div class="resister_container">
+            <div class="resister_area side2">
+                <div class="resister_title"><h3>商品登録</h3></div>
+                <div class="enter_container">
+                    <%= form_for @products, html: {class: "new_product"} do |f| %>
+                        <%= f.label :name, "商品名", class:"form_field" %>
+                        <%= f.text_field :name, class:"form_area" %>
+
+                        <%= f.label :price, "価格", class:"form_field" %>
+                        <%= f.text_field :price, class:"form_area" %>
+
+                        <%= f.label :count, "在庫数", class:"form_field" %>
+                        <%= f.select :count, [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30], {include_blank: 0}, class:"form_area" %>
+
+                        <%= f.label :category, "カテゴリー", class:"form_field" %>
+                        <%= f.select :category, [
+                            ["野菜", "vegitables"],
+                            ["果物", "fruits"],
+                            ["肉", "meats"],
+                            ["魚介類", "fishes"],
+                            ["卵・乳製品", "eggs"],
+                            ["お酒", "alcohols"],
+                            ["調味料", "souces"]
+                        ], class:"form_area" %>
+
+                        <%= f.label :content, "商品内容", class:"form_field" %>
+                        <%= f.text_area :content, class:"form_area", size:"30x10" %>
+
+                        <%= f.label :comment, "商品紹介", class:"form_field" %>
+                        <%= f.text_area :comment, class:"form_area", size:"50x20" %>
+
+                        <%= f.fields_for :images do |i| %>
+                            <%= i.label :img1, "メイン画像（必須）"%>
+                            <%= i.file_field :img1 %>
+
+                            <%= i.label :img2, "サブ画像"%>
+                            <%= i.file_field :img2 %>
+
+                            <%= i.label :img3, "サブ画像"%>
+                            <%= i.file_field :img3 %>
+
+                            <%= i.label :img4, "サブ画像"%>
+                            <%= i.file_field :img4 %>
+
+                            <%= i.label :img5, "サブ画像"%>
+                            <%= i.file_field :img5 %>
+                        <% end %>
+
+                        <%= collection_check_boxes(:product, :tag_ids, Tag.all, :id, :name) do |tag| %>
+                            <%= tag.label do %>
+                                <%= tag.check_box %>
+                                <%= tag.text %>
+                            <% end %>
+                        <% end %>
+
+                        <%= f.submit "登録", class:"resister_btn"%>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </section>

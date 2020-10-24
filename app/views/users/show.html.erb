@@ -17,6 +17,9 @@
                                 <p class="tel"><%= @user.tel %></p>
                             </div>
                         </div>
+                        <div class="edit">
+                            <%= link_to "個人情報を更新する", edit_user_path(current_user)%>
+                        </div>
                     </div>
                     <div class="result_block"></div>
                 </div>

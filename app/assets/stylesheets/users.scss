@@ -98,6 +98,22 @@
                             }
                         }
                     }
+                    .edit {
+                        background-color: #CAB270;
+                        width: 50%;
+                        margin: 2rem auto 0;
+                        color: #fff!important;
+                        font-weight: 600;
+                        font-size: 15px;
+                        border-radius: 5px;
+                        padding: 5px 10px;
+                        cursor: pointer;
+                        text-align: center;
+                        a {
+                            color: #fff!important;
+                            
+                        }
+                    }
                 }
                 .result_block {
                     width: 70%;
