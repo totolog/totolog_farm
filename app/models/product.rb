@@ -6,6 +6,10 @@ class Product < ApplicationRecord
     has_many :tags, through: :product_tags
     # accepts_nested_attributes_for :tags, allow_destroy: true
 
+    belongs_to :farmer
+
+    has_many :cart_items
+
     default_scope -> {order(create_at: :desc)}
 
 

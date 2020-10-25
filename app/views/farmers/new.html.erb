@@ -1,0 +1,51 @@
+<% provide(:title, "農家登録") %>
+    <section class="resister">
+        <div class="resister_container">
+            <div class="resister_area side2">
+                <div class="resister_title"><h3>農家登録</h3></div>
+                <div class="enter_container">
+                    <%= form_for @farmer_resister, html: {class: "new_farmer"} do |f| %>
+                        <%= render "error_messages" %>
+                        <%= f.label :name, "農家名", class:"form_field" %>
+                        <%= f.text_field :name, class:"form_area" %>
+
+                        <%= f.label :email, "Email", class:"form_field" %>
+                        <%= f.text_field :email, class:"form_area" %>
+
+
+                        <%= f.label :tel, "電話番号", class:"form_field" %>
+                        <%= f.text_field :tel, class:"form_area" %>
+
+                        <%= f.label :postal_code, "郵便番号", class:"form_field" %>
+                        <%= f.text_field :postal_code, class:"form_area", required:"required" %>
+
+                        <%= f.label :prefecture, "都道府県", class:"form_field" %>
+                        <%= f.text_field :prefecture, class: 'form_area', required:"required" %>
+
+                        <%= f.label :address, "住所", class:"form_field" %>
+                        <%= f.text_field :address, class: 'form_area', required:"required" %>
+
+                        <%= f.label :comment, "農家紹介", class:"form_field" %>
+                        <%= f.text_area :comment, class:"form_area", size:"50x10" %>
+
+                        <%= f.fields_for :farmer_images do |i| %>
+                            <%= i.label :farmer_logo, "農家ロゴ画像（必須）"%>
+                            <%= i.file_field :farmer_logo %>
+
+                            <%= i.label :farmer_image, "農家紹介画像（必須）"%>
+                            <%= i.file_field :farmer_image %>
+                        <% end %>
+
+                        <%= f.label :password, "パスワード", class: "label_field" %>
+                        <%= f.password_field :password, class: "form_area" %>
+
+                        <%= f.label :password_confirmation, "パスワード確認", class: "label_field" %>
+                        <%= f.password_field :password_confirmation, class: "form_area" %>
+
+                        <%= f.submit "登録", class:"resister_btn"%>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </section>
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>

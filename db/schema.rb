@@ -10,7 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_23_105255) do
+ActiveRecord::Schema.define(version: 2020_10_25_050640) do
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "cart_id"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["product_id"], name: "index_cart_items_on_product_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
+  create_table "farmer_images", force: :cascade do |t|
+    t.string "farmer_logo"
+    t.string "farmer_image"
+    t.integer "farmer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["farmer_id"], name: "index_farmer_images_on_farmer_id"
+  end
+
+  create_table "farmers", force: :cascade do |t|
+    t.string "name"
+    t.string "postal_code"
+    t.string "address"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "prefecture"
+    t.string "tel"
+    t.string "email"
+    t.string "password_digest"
+    t.string "remember_digest"
+  end
 
   create_table "images", force: :cascade do |t|
     t.integer "product_id"
@@ -42,6 +82,8 @@ ActiveRecord::Schema.define(version: 2020_10_23_105255) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price"
+    t.integer "farmer_id"
+    t.index ["farmer_id"], name: "index_products_on_farmer_id"
   end
 
   create_table "tags", force: :cascade do |t|

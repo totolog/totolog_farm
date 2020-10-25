@@ -1,0 +1,43 @@
+<section class="farmer">
+        <div class="farmer_container">
+            <div class="farmer_area side2">
+                <div class="farmer_title"><h3>農家向けページ</h3></div>
+                <div class="enter_container">
+                    <div class="menu_boxes">
+                        <div class="menu_box">
+                            <ul>
+                                <% if farmer_loggedin? %>
+                                    <!-- 農家登録者向け -->
+                                    <li class="details">
+                                        <%= link_to "農家詳細", farmer_path(current_farmer) %>
+                                    </li>
+                                    <li class="edit">
+                                        <%= link_to "情報更新", edit_farmer_path(current_farmer) %>
+                                    </li>
+                                    <li class="logout">
+                                        <%= link_to "農家ログアウト", farmer_logout_path, method: :delete %>
+                                    </li>
+                                    <li class="resister">
+                                        <%= link_to "商品登録", new_product_path %>
+                                    </li>
+                                    <!-- ここまで -->
+                                <% else %>
+                                    <!-- 農家未登録者向け -->
+                                    <li class="signIn">
+                                        <%= link_to "農家登録", new_farmer_path %>
+                                    </li>
+                                    <li class="farmer login">
+                                        <%= link_to "農家登録とは", "#" %>
+                                    </li>
+                                    <li class="login">
+                                        <%= link_to "農家ログイン", farmer_login_path %>
+                                    </li>
+                                    <!-- ここまで -->
+                                <% end %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

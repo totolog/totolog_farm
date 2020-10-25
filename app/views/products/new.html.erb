@@ -4,7 +4,8 @@
             <div class="resister_area side2">
                 <div class="resister_title"><h3>商品登録</h3></div>
                 <div class="enter_container">
-                    <%= form_for @products, html: {class: "new_product"} do |f| %>
+                    <%= form_for @product_resister, html: {class: "new_product"} do |f| %>
+                        <%= render "error_messages" %>
                         <%= f.label :name, "商品名", class:"form_field" %>
                         <%= f.text_field :name, class:"form_area" %>
 
@@ -55,6 +56,7 @@
                             <% end %>
                         <% end %>
 
+                        <%= f.hidden_field :farmer_id, value: session[:farmer_id] %>
                         <%= f.submit "登録", class:"resister_btn"%>
                     <% end %>
                 </div>

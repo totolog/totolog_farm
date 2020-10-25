@@ -1,0 +1,119 @@
+.resister {
+    .resister_container {
+        margin-top: 3rem;
+        .resister_area {
+            .resister_title {
+                padding: 10px 20px;
+                background-color: #F1F1F1;
+                border-radius: 10px;
+                h3 {
+
+                }
+            }
+            .enter_container {
+                margin-top: 2rem;
+                padding: 1rem 3rem;
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    .label_field {
+
+                    }
+                    .form_area {
+                        margin-bottom: 2rem;
+                        padding: 10px 10px;
+                        font-size: 15px;
+                        border-radius: 5px;
+                        outline : none;
+                        border: 1px solid #afafaf;
+                    }
+                    .resister_btn {
+                        border: none;
+                        background-color: #CAB270;
+                        width: 20%;
+                        margin: 2rem auto 0;
+                        font-weight: 700;
+                        font-size: 15px;
+                        border-radius: 5px;
+                        padding: 5px 10px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.farmer {
+    .farmer_container {
+        margin-top: 3rem;
+        .farmer_area {
+            .farmer_title {
+                padding: 10px 20px;
+                background-color: #F1F1F1;
+                border-radius: 10px;
+                h3 {
+
+                }
+            }
+            .enter_container {
+                margin-top: 2rem;
+                padding: 1rem 0;
+                .menu_box {
+                    ul {
+                        display: flex;
+                        flex-flow: row wrap;
+                        flex-wrap: wrap;
+                        align-content: flex-start;
+                        padding-left: 0;
+                        margin: 0;
+                        li {
+                            height: 190px;
+                            width: 190px;
+                            margin: 1rem auto 0;
+                            background-size: 50%;
+                            background-repeat: no-repeat;
+                            background-position: center 30%;
+                            list-style: none;
+                            text-align: center;
+                            transition: all 0.5s;
+                            background-color: #D6ED80;
+                            border-radius: 15px;
+                            a {
+                                display: block;
+                                padding-top: 140px;
+                                padding-bottom: 20px;
+                                font-size: 1rem;
+                                font-weight: 900;
+                                text-decoration: none;
+                                color: #000000;
+                            }
+                            &:hover {
+                                background-position: center 25%;
+                            }
+                            &.signIn {
+                                background-image: url("signin.png");
+                            }
+                            &.login {
+                                background-image: url("login.png");
+                            }
+                            &.details {
+                                background-image: url("details.png");
+                            }
+                            &.resister {
+                                background-image: url("product.png");
+                            }
+                            &.edit {
+                                background-image: url("edit.png");
+                                background-size: 30%;
+                            }
+                            &.logout {
+                                background-image: url("logout.png");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -32,6 +32,21 @@
                                         </div>
                                         <div class="product_price">¥<%= product.price %></div>
                                     <% end%>
+                                    <%= link_to farmer_path(product.farmer_id) do %>
+                                    <% farmer_info = Farmer.find(product.farmer_id) %>
+                                        <div class="farm_area">
+                                            <div class="image_farmer">
+                                                <% farmer_images = farmer_info.farmer_images %>
+                                                <% farmer_images.each do |farmer_image| %>
+                                                    <%= image_tag "#{farmer_image.farmer_logo}" %>
+                                                <% end%>
+                                            </div>
+                                            <div class="farmer_info">
+                                                <div class="farmer_area"><p><%= "#{farmer_info.prefecture}" %></p></div>
+                                                <div class="farmer_name"><p><%= "#{farmer_info.name}" %></p></div>
+                                            </div>
+                                        </div>
+                                    <% end %>
                                 </div>
                                 <% end %>
                             </div>

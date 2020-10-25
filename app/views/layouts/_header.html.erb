@@ -14,24 +14,24 @@
                 <div class="header_menu_block">
                     <ul>
                     <% if logged_in? %>
-                        <li class="login">
-                            <%= link_to "ログアウト", logout_path, method: :delete %>
-                        </li>
-                        <li class="resister">
+                        <li class="user">
                             <%= link_to "ユーザー", user_path(current_user) %>
                         </li>
-                        <li class="resister">
-                            <%= link_to "カート", "#" %>
+                        <li class="cart">
+                            <%= link_to "カート", cart_item_path(current_user) %>
+                        </li>
+                        <li class="farmer">
+                            <%= link_to "農家の方", farmers_path %>
                         </li>
                     <% else %>
                         <li class="login">
                             <%= link_to "ログイン", login_path %>
                         </li>
-                        <li class="resister">
+                        <li class="register">
                             <%= link_to "登録", signup_path %>
                         </li>
-                        <li class="resister">
-                            <%= link_to "登録", "#" %>
+                        <li class="farmer">
+                            <%= link_to "農家の方", farmers_path %>
                         </li>
                     <% end %>
                     </ul>

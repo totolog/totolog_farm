@@ -1,0 +1,12 @@
+<% if @product_resister.errors.any? %>
+    <div class="errors_container">
+        <div calss="alert alert-danger">
+            <%= pluralize(@product_resister.errors.count, "つのエラー") %>があります。
+        </div>
+        <ul>
+            <% @product_resister.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

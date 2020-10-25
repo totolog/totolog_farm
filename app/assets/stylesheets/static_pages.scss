@@ -94,7 +94,7 @@ header {
                     li {
                         height: 100px;
                         width: calc(100%/3);
-                        background-size: 45%;
+                        background-size: 40%;
                         border-right: 2px solid #eee;
                         background-repeat: no-repeat;
                         background-position: center 25%;
@@ -110,8 +110,18 @@ header {
                         &.login {
                             background-image: url("login.png");
                         }
-                        &.resister {
-                            background-image: url("resister.png");
+                        &.register {
+                            background-image: url("register.png");
+                        }
+                        &.farmer {
+                            background-image: url("farmer.png");
+                            background-size: 30%;
+                        }
+                        &.cart {
+                            background-image: url("cart.png");
+                        }
+                        &.user {
+                            background-image: url("user.png");
                         }
                         a {
                             display: block;

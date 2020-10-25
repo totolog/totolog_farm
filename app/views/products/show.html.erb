@@ -1,0 +1,63 @@
+<section class="detail">
+        <div class="side detail_container">
+            <div class="left">
+                <div class="img_area">
+                    <% @product_images.each do |product_image| %>
+                    <div class="main_img"><%= image_tag "#{product_image.img1}" %></div>
+                    <% end %>
+                    <ul>
+                        <% @product_images.each do |image| %>
+                            <% if image.img2? %>
+                                <li><%= image_tag "#{image.img2}"%></li>
+                            <% end%>
+                            <% if image.img3? %>
+                                <li><%= image_tag "#{image.img3}"%></li>
+                            <% end%>
+                            <% if image.img4? %>
+                                <li><%= image_tag "#{image.img4}"%></li>
+                            <% end%>
+                            <% if image.img5? %>
+                                <li><%= image_tag "#{image.img5}"%></li>
+                            <% end%>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <div class="text_area">
+                    <div class="buy_area">
+                        <h1 class="title"><%= @product.name %></h1>
+                        <p class="content">内容：<%= @product.content %></p>
+                        <p class="price">
+                            <span class="product_price"><%= @product.price %></span>
+                            <span class="price_tag">円（税込み/送料別）</span>
+                        </p>
+                        <div class="function">
+                            <%= form_for(CartItem.new, url: cart_items_path) do |f|%>
+
+                            <%= f.label :quantity, "数量", class: "label_field"%>
+                            <p><%= f.select :quantity, @count, include_blank: "0", class: "form_area" %></p>
+
+                            <%= f.hidden_field :product_id, value: @product.id %>
+                            <div class="order_btn">
+                                <%= f.submit "カートに追加", class:"btn cart_btn" %>
+                            </div>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class="tag_area">
+                        <ul class="tag_list">
+                            <% @tags.each do |tag| %>
+                            <li><%= link_to "#{tag.name}", root_path %></li>
+                            <% end%>
+                        </ul>
+                    </div>
+                    <div class="description_area">
+                        <div class="description">
+                            <%= @product.comment %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
